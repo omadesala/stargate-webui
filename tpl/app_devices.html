@@ -1,32 +1,26 @@
 <div class="bg-light lter b-b wrapper-md">
   <h1 class="m-n font-thin h3">Devices</h1>
 </div>
-<div class="wrapper-md">
+<div class="wrapper-md" ng-controller="DevicesCtl" ng-init="getDevicesList()">
   <div class="panel panel-default">
     <div class="panel-heading">
       Devices
     </div>
     <div class="table-responsive">
-      <table ui-jq="dataTable" ui-options="{
-          sAjaxSource: 'vendor/jquery/datatables/datatable.json',
-          aoColumns: [
-            { mData: 'engine' },
-            { mData: 'browser' },
-            { mData: 'platform' },
-            { mData: 'version' },
-            { mData: 'grade' }
-          ]
-        }" class="table table-striped m-b-none">
+      <table ui-jq="dataTable" ui-options="tbOptions" class="table table-striped m-b-none">
         <thead>
           <tr>
-            <th  style="width:20%">Rendering engine</th>
-            <th  style="width:25%">Browser</th>
-            <th  style="width:25%">Platform(s)</th>
-            <th  style="width:15%">Engine version</th>
-            <th  style="width:15%">CSS grade</th>
+            <th  style="width:20%">deviceid</th>
+            <th  style="width:25%">description</th>
+            <th  style="width:25%">createDate</th>
           </tr>
         </thead>
         <tbody>
+        <tr ng-repeat="item in $data">
+          <td>{{item.data.deviceid}}</td>
+          <td>{{item.data.description}}</td>
+          <td>{{item.data.createDate}}</td>
+        </tr>
         </tbody>
       </table>
     </div>

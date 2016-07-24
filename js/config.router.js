@@ -366,7 +366,13 @@ angular.module('app')
                 // Devices
                 .state('app.devices', {
                     url: '/devices',
-                    templateUrl: 'tpl/app_devices.html'
+                    templateUrl: 'tpl/app_devices.html',
+                    resolve: {
+                        deps: ['uiLoad',
+                            function (uiLoad) {
+                                return uiLoad.load(['js/app/devices/devices.js']);
+                            }]
+                    }
                 })
                 // mail
                 .state('app.mail', {
