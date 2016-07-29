@@ -12,14 +12,14 @@
           <tr>
             <th  style="width:20%">deviceid</th>
             <th  style="width:25%">description</th>
-            <th  style="width:25%">createDate</th>
+            <th  style="width:25%">createdate</th>
           </tr>
         </thead>
         <tbody>
         <tr ng-repeat="item in $data">
           <td>{{item.data.deviceid}}</td>
           <td>{{item.data.description}}</td>
-          <td>{{item.data.createDate}}</td>
+          <td>{{ item.data.createdate }}</td>
         </tr>
         </tbody>
       </table>
